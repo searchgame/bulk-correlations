@@ -73,5 +73,21 @@ if file_upload is not None:
     # Show the plot in Streamlit
     st.pyplot(fig)
 
+    # Create a list of metric pairs
+    metric_pairs = [(data.columns[i], data.columns[j]) for i in range(len(data.columns)) for j in range(i+1, len(data.columns))]
+
+    # Add a dropdown to select a metric pair
+    selected_pair = st.selectbox("Select a metric pair", metric_pairs)
+
+    # Create a scatter plot for the selected metric pair
+    x = data[selected_pair[0]]
+    y = data[selected_pair[1]]
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(x, y)
+    ax.set_xlabel(selected_pair[0])
+    ax.set_ylabel(selected_pair[1])
+    ax.set_title(f"Scatter plot of {selected_pair[0]} vs {selected_pair[1]}")
+    st.pyplot(fig)
+
 else:
     st.sidebar.text('Please upload a CSV file.')
