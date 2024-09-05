@@ -73,11 +73,25 @@ if file_upload is not None:
     # Show the plot in Streamlit
     st.pyplot(fig)
 
-    # Create a list of metric pairs
-    metric_pairs = [(data.columns[i], data.columns[j]) for i in range(len(data.columns)) for j in range(i+1, len(data.columns))]
+    # Create a list of metric pairs with their correlation coefficients
+    metric_pairs = []
+    for i in range(len(data.columns)):
+        for j in range(i+1, len(data.columns)):
+            pair = (data.columns[i], data.columns[j])
+            corr_value = corr.iloc[i, j]
+            metric_pairs.append((pair, corr_value))
+
+    # Sort the metric pairs based on the absolute value of correlation
+    sorted_pairs = sorted(metric_pairs, key=lambda x: abs(x[1]), reverse=True)
+
+    # Create a list of formatted strings for the dropdown
+    dropdown_options = [f"{pair[0]} vs {pair[1]} (corr: {corr:.2f})" for pair, corr in sorted_pairs]
 
     # Add a dropdown to select a metric pair
-    selected_pair = st.selectbox("Select a metric pair", metric_pairs)
+    selected_pair_str = st.selectbox("Select a metric pair", dropdown_options)
+
+    # Extract the selected pair from the string
+    selected_pair = tuple(selected_pair_str.split(' vs ')[0:2])
 
     # Create a scatter plot for the selected metric pair
     x = data[selected_pair[0]]
