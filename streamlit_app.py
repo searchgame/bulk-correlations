@@ -93,14 +93,14 @@ if file_upload is not None:
     # Extract the selected pair from the string
     selected_pair = tuple(selected_pair_str.split(' (')[0].split(' vs '))
 
-    # Create a scatter plot for the selected metric pair
+    # Create a scatter plot with regression line for the selected metric pair
     x = data[selected_pair[0]]
     y = data[selected_pair[1]]
-    fig, ax = plt.subplots(figsize=(8, 6))
-    ax.scatter(x, y)
+    fig, ax = plt.subplots(figsize=(10, 8))
+    sns.regplot(x=x, y=y, ax=ax, scatter_kws={'alpha':0.5})
     ax.set_xlabel(selected_pair[0])
     ax.set_ylabel(selected_pair[1])
-    ax.set_title(f"Scatter plot of {selected_pair[0]} vs {selected_pair[1]}")
+    ax.set_title(f"Scatter plot with regression line: {selected_pair[0]} vs {selected_pair[1]}")
     st.pyplot(fig)
 
 else:
