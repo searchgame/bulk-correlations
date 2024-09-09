@@ -4,6 +4,28 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
+"""
+# 💡 Bulk correlations 
+Quickly uncover potential relationships in a CSV dataset by getting an overview of correlation coefficients between several pairs of metrics.
+See the code and how to interpret the chart [on the Github repo](https://github.com/searchgame/bulk-correlations). Made by [Victor Gras](https://victorgras.com).
+---
+## Usage:
+1) Upload a CSV file from the left sidebar. Except for the first column, all columns must contain numeric values. The format expected is: 
+```
+item,metric_1,metric_2,metric_3,etc
+```
+For example, for a GA4 export:
+```
+Address,Word Count,GA4 Sessions,GA4 Views,GA4 Engaged sessions,GA4 Bounce rate,Performance Score,First Contentful Paint Time in ms,Speed Index Time in ms,Largest Contentful Paint Time in ms,Time to Interactive in ms,Total Blocking Time in ms,Cumulative Layout Shift score,Image Count
+https://www.example.com/article-1/,692,13,13,7,0.3,60,2294,3864.021,6255,6716,537,0.013,5
+https://www.example.com/article-2/,114,5,5,1,0,61,2264,3316.94,8505,6850.5,418.5,0.059,6
+https://www.example.com/article-3/,1780,20,21,11,0.27,52,2704,3881.909,9030,7943,712,0.001,8
+...
+```
+2) The chart automatically appears under "Results:"
+---
+"""
+
 # Set a title
 st.title('Results:')
 
