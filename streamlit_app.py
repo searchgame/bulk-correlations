@@ -6,10 +6,13 @@ import numpy as np
 
 """
 # 💡 Bulk correlations 
+
 Quickly uncover potential relationships in a CSV dataset by getting an overview of correlation coefficients between several pairs of metrics.
 See the code and how to interpret the chart [on the Github repo](https://github.com/searchgame/bulk-correlations). Made by [Victor Gras](https://victorgras.com).
+
 ---
 ## Usage:
+
 1) Upload a CSV file from the left sidebar. Except for the first column, all columns must contain numeric values. The format expected is: 
 ```
 item,metric_1,metric_2,metric_3,etc
