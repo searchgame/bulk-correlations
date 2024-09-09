@@ -85,13 +85,13 @@ if file_upload is not None:
     sorted_pairs = sorted(metric_pairs, key=lambda x: abs(x[1]), reverse=True)
 
     # Create a list of formatted strings for the dropdown
-    dropdown_options = [f"{pair[0]} vs {pair[1]} (corr: {corr:.2f})" for pair, corr in sorted_pairs]
+    dropdown_options = [f'"{pair[0]}" vs "{pair[1]}" (corr: {corr:.2f})' for pair, corr in sorted_pairs]
 
     # Add a dropdown to select a metric pair
     selected_pair_str = st.selectbox("Select a metric pair", dropdown_options)
 
     # Extract the selected pair from the string
-    selected_pair = tuple(selected_pair_str.split(' (')[0].split(' vs '))
+    selected_pair = tuple(selected_pair_str.split('" vs "')[0].strip('"'), selected_pair_str.split('" vs "')[1].strip('"'))
 
     # Create a scatter plot with regression line for the selected metric pair
     x = data[selected_pair[0]]
