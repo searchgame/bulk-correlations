@@ -91,7 +91,7 @@ if file_upload is not None:
     selected_pair_str = st.selectbox("Select a metric pair", dropdown_options)
 
     # Extract the selected pair from the string
-    selected_pair = tuple(selected_pair_str.split('" vs "')[0].strip('"'), selected_pair_str.split('" vs "')[1].strip('"'))
+    selected_pair = tuple(selected_pair_str.split('" vs "'))
 
     # Create a scatter plot with regression line for the selected metric pair
     x = data[selected_pair[0]]
