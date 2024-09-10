@@ -32,6 +32,8 @@ https://www.example.com/article-3/,1780,20,21,11,0.27,52,2704,3881.909,9030,7943
 ...
 ```
 2) The chart automatically appears below under "Results:"
+
+3) Once the correlation is displayed, a dropdown list containing all the metrics pairs will appear. The list is sorted from most correlating (positively or negatively) to least correlating. When selecting a metrics pair, a scatter plot will appear below showing the actual distribution of the data points.
 ---
 """
 
