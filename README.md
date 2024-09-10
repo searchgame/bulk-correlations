@@ -6,7 +6,15 @@ A simple python app to quickly uncover potential relationships in a CSV dataset 
 
 ## Usage:
 
-1) Uploade a CSV file from the left sidebar. The format expected is: 
+1) Upload a CSV file from the left sidebar.
+
+- Except for the first column, all columns must contain numeric values.
+
+- Make sure that your CSV file is using comma as separator (not semicolon).
+
+- Make sure that the column names of your CSV file doesn't contain special characters such as parentheses or quotes (white spaces, hyphens and underscores are okay).
+
+The format expected is:
 ```
 item,metric_1,metric_2,metric_3,etc
 ```
@@ -19,8 +27,9 @@ https://www.example.com/article-3/,1780,20,21,11,0.27,52,2704,3881.909,9030,7943
 ...
 ```
 
-2) The chart automatically appears under "Results:"
+2) The correlation matrix automatically appears under "Results:"
 
+3) Once the correlation matrix is displayed, a dropdown list containing all the metrics pairs will appear. The list is sorted from most correlating (positively or negatively) to least correlating. When selecting a metrics pair, a scatter plot will appear below showing the actual distribution of the data points.
 
 ## How to read the chart:
 
