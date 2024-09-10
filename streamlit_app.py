@@ -102,7 +102,7 @@ if file_upload is not None:
     x = data[selected_pair[0]]
     y = data[selected_pair[1]]
     fig, ax = plt.subplots(figsize=(10, 8))
-    sns.regplot(x=x, y=y, ax=ax, scatter_kws={'alpha':0.3}, ci=None)
+    sns.regplot(x=x, y=y, ax=ax, scatter_kws={'alpha':0.3}, line_kws={'linewidth':10}, ci=None)
     ax.set_xlabel(selected_pair[0])
     ax.set_ylabel(selected_pair[1])
     ax.set_title(f"Scatter plot with regression line: {selected_pair[0]} vs {selected_pair[1]}")
