@@ -29,10 +29,7 @@ https://www.example.com/article-3/,1780,20,21,11,0.27,52,2704,3881.909,9030,7943
 
 2) The correlation matrix automatically appears under "Results:"
 
-3) Once the correlation matrix is displayed, a dropdown list containing all the metrics pairs will appear. The list is sorted from most correlating (positively or negatively) to least correlating. When selecting a metrics pair, a scatter plot will appear below showing the actual distribution of the data points.
-
-## How to read the chart:
-
 ![alt text](https://github.com/searchgame/bulk-correlations/blob/main/example-bulk-correlations.png?raw=true)
 
-Coming soon!
+3) Once the correlation matrix is displayed, a dropdown list containing all the metrics pairs will appear. The list is sorted from most correlating (positively or negatively) to least correlating. When selecting a metrics pair, a scatter plot will appear below showing the actual distribution of the data points.
+
