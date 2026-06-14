@@ -8,7 +8,7 @@ import numpy as np
 # 💡 Bulk correlations 
 
 Quickly uncover potential relationships in a CSV dataset by getting an overview of correlation coefficients between several pairs of metrics.
-See the code and how to interpret the charts [on the Github repo](https://github.com/searchgame/bulk-correlations). Made by [Victor Gras](https://victorgras.com).
+See the code and how to interpret the charts [on the Github repo](https://github.com/searchgame/bulk-correlations). Made by [Victor Gras](https://www.linkedin.com/in/victorgras/).
 
 ---
 ## Usage:
